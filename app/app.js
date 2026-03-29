@@ -1,8 +1,13 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 
+// serve static files
+app.use(express.static(__dirname));
+
+// load index.html
 app.get('/', (req, res) => {
-    res.send('Hello from DevOps Node.js Project 🚀');
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(3000, () => {
