@@ -3,11 +3,11 @@ pipeline {
 
     stages {
 
-        stage('Clone Code') {
-            steps {
-                git 'YOUR_GITHUB_REPO_LINK'
-            }
-        }
+       stage('Clone Code') {
+    steps {
+        git 'https://github.com/priyadurga888/devops-project.git'
+    }
+}
 
         stage('Build Docker Image') {
             steps {
