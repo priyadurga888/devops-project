@@ -11,7 +11,10 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 3002:3000 --name mynodeapp-container mynodeapp'
+                sh '''
+                docker rm -f mynodeapp-container || true
+                docker run -d -p 3002:3000 --name mynodeapp-container mynodeapp
+                '''
             }
         }
 
